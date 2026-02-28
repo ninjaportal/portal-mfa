@@ -1,0 +1,45 @@
+{
+  "name": "ninjaportal/portal-mfa",
+  "description": "Configurable MFA package for NinjaPortal actors (admin + consumer)",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "spatie/laravel-package-tools": "^1.16",
+    "illuminate/contracts": "^11.0||^12.0",
+    "illuminate/support": "^11.0||^12.0",
+    "ninjaportal/portal": "^1.0 || dev-main || dev-master",
+    "ninjaportal/portal-api": "^1.0 || dev-main || dev-master"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.20",
+    "orchestra/testbench": "^9.0||^10.0",
+    "phpstan/phpstan": "^1.12||^2.0",
+    "phpunit/phpunit": "^11.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "NinjaPortal\\Mfa\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "NinjaPortal\\Mfa\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "NinjaPortal\\Mfa\\MfaServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit -c phpunit.xml.dist",
+    "analyse": "vendor/bin/phpstan analyse -c phpstan.neon.dist",
+    "format": "vendor/bin/pint",
+    "format:test": "vendor/bin/pint --test"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
